@@ -8,49 +8,56 @@
     <script src="https://kit.fontawesome.com/deb773237d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="styles.css?v=1.0">
     <script src="scripts.js"></script>
+
     <title>Classic Grid</title>
 </head>
 <body>
-<nav class="nav-bar">
+<nav class="nav-bar" data-toggled="false" data-transitionable="false">
     <div class="nav-section" id="nav-logo-section">
         <a href="#">
             <i class="fa-solid fa-dumpster-fire"></i>
         </a>
     </div>
 
-    <div class="nav-section" id="nav-link-section">
-        <a href="#">ABOUT</a>
-        <a href="#">LOLIFMASTER</a>
+    <div id="nav-mobile-section">
+        <div class="nav-section" id="nav-link-section">
+            <a href="#">ABOUT</a>
+            <a href="#">LOLIFMASTER</a>
+        </div>
+
+        <div class="nav-section" id="nav-social-section">
+            <a href="https://github.com/lolifmaster">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="https://www.instagram.com/chrf_mounir/">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+
+            <a href="https://www.youtube.com/watch?v=d08dw3ztKZw">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+        </div>
+
+        <div class="nav-section" id="nav-contact-section">
+            <a href="#">CONTACT US</a>
+        </div>
     </div>
-
-    <div class="nav-section" id="nav-social-section">
-        <a href="https://github.com/lolifmaster">
-            <i class="fa-brands fa-github"></i>
-        </a>
-
-        <a href="https://www.instagram.com/chrf_mounir/">
-            <i class="fa-brands fa-instagram"></i>
-        </a>
-
-        <a href="#">
-            <i class="fa-brands fa-twitter"></i>
-        </a>
-
-        <a href="https://www.youtube.com/watch?v=d08dw3ztKZw">
-            <i class="fa-brands fa-youtube"></i>
-        </a>
-    </div>
-
-    <div class="nav-section" id="nav-content-section">
-        <a href="#">CONTACT US</a>
-    </div>
+    <button id="nav-toggle-button" type="button" onclick="handleNavToggle()">
+        <span>Menu</span>
+        <i class="fa-solid fa-bars"></i>
+    </button>
 </nav>
 
 <main>
     <article data-index="0" data-status="active">
         <div class="article-image-section article-section"></div>
         <div class="article-description-section article-section">
-            <p> This cat makes my life a better one just because <span>goofy_cat</span> was the best thing that happend to me
+            <p> This cat makes my life a better one just because <a>goofy_cat</a> was the best thing that happend to me
                 <br> See how goofy it is👀💖</p>
         </div>
         <div class="article-title-section article-section">
@@ -125,5 +132,6 @@
         </div>
     </article>
 </main>
+<script src="toggle.js"></script>
 </body>
 </html>
