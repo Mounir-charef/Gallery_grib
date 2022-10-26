@@ -13,6 +13,8 @@ window.matchMedia("(max-width: 800px)").onchange = () => {
 
     nav_bar.dataset.toggled = "false";
 };
+// cursor_wrapper
+
 
 let myDiv = document.getElementById('follower');
 

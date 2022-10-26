@@ -21,6 +21,8 @@ body {
 }
 
 #follower {
+    pointer-events: none;
+    mix-blend-mode: difference;
     width: 1rem;
     height: 1rem;
     background-color: rgba(255,255,255,.6);
@@ -28,6 +30,7 @@ body {
     translate: -50% -50%;
     border-radius: 50%;
     box-shadow: 0 0 20px rgba(16, 0, 54, .2);
+    z-index: 5;
 }
 
 nav {
