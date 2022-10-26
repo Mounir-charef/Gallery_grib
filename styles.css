@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
 :root {
     --background-color: rgb(5, 10, 24);
     --border-color : rgba(255, 255, 255, 0.1);
@@ -136,10 +137,26 @@ span{
 
 .article-title-section {
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    font-size: 1.7rem;
+    justify-content: space-between;
+    padding: 2rem 4rem;
+
 }
+
+main > article > .article-title-section > h2 {
+    flex-basis: 50%;
+    font-family: 'Sigmar One', cursive;
+    font-size: 3.5rem;
+    line-height: 3rem;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+main > article > .article-title-section > a > i {
+    color: rgba(255, 255, 255, 0.75);
+    font-size:  4rem;
+}
+
 
 .article-nav-section {
     display: flex;
