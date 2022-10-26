@@ -1,0 +1,217 @@
+:root {
+    --background-color: rgb(5, 10, 24);
+    --border-color : rgba(255, 255, 255, 0.1);
+    --background-color-hover: rgb(19, 33, 65)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background-color) ;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.nav-bar {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-bar > .nav-section {
+    padding: 3rem 2rem;
+    border-left: 1px solid var(--border-color);
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-logo-section {
+    justify-content: start;
+    font-size: 2.5rem;
+}
+
+#nav-link-section {
+    gap: 6rem;
+}
+
+#nav-social-section {
+    gap: 3rem;
+}
+
+#nav-link-section,
+#nav-logo-section {
+    flex-basis: calc(100% / 3 );
+}
+
+#nav-social-section,
+#nav-content-section {
+    flex-grow: 1;
+}
+
+h1, h2, h3, a, p, span {
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    flex-grow: 1;
+    position: relative;
+}
+
+main > article {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    left: 0;
+    top: 0;
+    position: absolute;
+    transition: transform 400ms ease;
+}
+
+main > article > .article-section {
+    height: 100%;
+    /*border: 1px solid var(--border-color);*/
+}
+
+main > article > .article-description-section,
+main > article > .article-nav-section {
+    border-left: 1px solid var(--border-color);
+
+}
+
+main > article > .article-title-section,
+main > article > .article-nav-section {
+    border-top: 1px solid var(--border-color);
+}
+
+main > article:first-child > .article-image-section {
+    background-image: url("cattu.jpg");
+}
+
+main > article:nth-child(2) > .article-image-section {
+    background-image: url("https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2574&q=80");
+}
+
+main > article:nth-child(3) > .article-image-section {
+    background-image: url("jhony.jpg");
+}
+
+main > article:nth-child(4) > .article-image-section {
+    background-image: url("nadir1.jpg");
+}
+
+main > article > .article-image-section {
+    /*background-image: url("cattu.jpg");*/
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.article-description-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+}
+p {
+    padding: 2rem;
+}
+span{
+    color: cornflowerblue;
+}
+
+.article-title-section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.7rem;
+}
+
+.article-nav-section {
+    display: flex;
+}
+.article-nav-section > div{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.left {
+    border-right: 1px solid var(--border-color);
+}
+
+main > article[data-status="inactive"] {
+    transform: translateX(-100%);
+    transition: none;
+}
+
+main > article[data-status="active"] {
+    transform: translateX(0%);
+}
+
+main > article[data-status="before"] {
+    transform: translateX(-100%);
+}
+
+main > article[data-status="after"] {
+    transform: translateX(100%);
+}
+
+main > article[data-status="becoming-active-from-before"] {
+    transform: translateX(-100%);
+    transition: none;
+}
+
+main > article[data-status="becoming-active-from-after"] {
+    transform: translateX(100%);
+    transition: none;
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+.arrow:hover {
+    background: var(--background-color-hover);
+}
+
+main > article[data-status='inactive'] {
+    transform: translateX(-100%);
+}
+
+main > article > .article-nav-section > .article-nav-button {
+    background-color: transparent;
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 3rem;
+    cursor: pointer;
+}
+main > article > .article-nav-section > .article-nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+a:hover {
+    color: cornflowerblue;
+}
+
+main > article > .article-nav-section > .article-nav-button:nth-child(2) {
+    border-left: 1px solid var(--border-color);
+}
+
+
