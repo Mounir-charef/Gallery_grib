@@ -25,14 +25,45 @@ function isTouchDevice(){
 
 let myDiv = document.getElementById('follower');
 
-myDiv.style.display = isTouchDevice() ? "none" : "block";
-console.log(isTouchDevice())
-
-const move = e => {
-    myDiv.style.left = e.pageX  + "px";
-    myDiv.style.top = e.pageY + "px";
+if (isTouchDevice()) {
+    myDiv.remove();
 }
 
-document.addEventListener("mousemove", (e)=>{
-    move(e)
-})
+const animateFollower = (e, interacting) => {
+    const x = e.clientX - myDiv.offsetWidth / 2 ,
+        y = e.clientY - myDiv.offsetHeight / 2;
+
+    const frames = {
+        transform: `translate(${x}px, ${y}px) scale(${interacting? 8 : 1})`
+    }
+
+    myDiv.animate(frames, {
+        duration: 800,
+        fill: "forwards",
+    });
+}
+
+const getFollowerClass = type => {
+    switch (type) {
+        case "video":
+            return "fa-solid fa-play";
+        default:
+            return "fa-solid fa-arrow-right";
+    }
+}
+
+window.onmousemove = e => {
+    const inter = e.target.closest(".inter"),
+        interacting = inter !== null ;
+
+    const icon = document.getElementById("follower-icon");
+
+    animateFollower(e, interacting);
+
+    myDiv.dataset.type = interacting ? inter.dataset.type : "";
+
+    if (interacting) {
+        icon.className = getFollowerClass(inter.dataset.type);
+    }
+
+}

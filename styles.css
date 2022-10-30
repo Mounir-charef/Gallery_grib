@@ -21,16 +21,35 @@ body {
 }
 
 #follower {
-    pointer-events: none;
+
     mix-blend-mode: difference;
+    border-radius: 50%;
     width: 1rem;
     height: 1rem;
-    background-color: rgba(255,255,255,.6);
-    position: absolute;
-    translate: -50% -50%;
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(16, 0, 54, .2);
+    background-color: white;
+
+    position: fixed;
+
     z-index: 5;
+
+    display: grid;
+    place-items: center;
+
+    pointer-events: none;
+    transition: opacity 500ms ease;
+}
+
+#follower:not([data-type=""]) >
+#follower-icon {
+    opacity: 1;
+}
+
+#follower-icon {
+    font-size: 6px;
+    line-height: 4px;
+
+    opacity: 0;
+    transition: opacity 400ms ease;
 }
 
 nav {
@@ -168,9 +187,27 @@ main > article:nth-child(4) > .article-image-section {
 main > article > .article-image-section {
     /*background-image: url("cattu.jpg");*/
     background-size: cover;
-    background-position: center;
+    background-position: bottom left;
     background-repeat: no-repeat;
+    opacity: .6;
+    transition: opacity 100ms;
 }
+
+
+main > article > .article-image-section:hover {
+    animation: myimg 2s forwards;
+    opacity: .8;
+}
+
+
+@keyframes myimg {
+
+    100% {
+        background-position: center;
+    }
+
+}
+
 
 main > article > .article-description-section {
     padding: 4rem;
@@ -268,6 +305,8 @@ a:hover {
 main > article > .article-nav-section > .article-nav-button:nth-child(2) {
     border-left: 1px solid var(--border-color);
 }
+
+
 
 @media (max-width: 1200px) {
     #nav-mobile-section {
