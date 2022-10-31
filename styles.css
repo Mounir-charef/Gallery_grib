@@ -202,8 +202,14 @@ main > article > .article-image-section:hover {
 
 @keyframes myimg {
 
-    100% {
+    from {
+        background-position: bottom left;
+        background-size: 100%;
+    }
+
+    to {
         background-position: center;
+        background-size: 120%;
     }
 
 }
